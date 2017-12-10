@@ -1,6 +1,6 @@
 {
   "name": "meh-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "authors": [
     "Loëck Vézien"
@@ -8,12 +8,14 @@
   "files": [
     "Box",
     "Button",
-    "Ellipsis"
+    "Ellipsis",
+    "index.js"
   ],
   "scripts": {
     "build": "babel src -d . --ignore stories",
     "clean": "git clean -fdX .",
     "lint": "eslint src .storybook",
+    "prepublishOnly": "yarn build",
     "prettier": "prettier --write \"{src,.storybook}/**/*.js\"",
     "storybook": "start-storybook -p 3333"
   },
