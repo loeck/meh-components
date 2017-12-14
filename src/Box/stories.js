@@ -2,6 +2,7 @@ import React from 'react'
 
 import { select, boolean, number } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
+import styled from 'styled-components'
 
 import Box from './'
 
@@ -45,12 +46,17 @@ stories.add('default', () => (
 
 const Container = props => <Box flow={10} {...props} />
 const Row = props => <Box horizontal flow={10} {...props} />
-const Col = Box.extend.attrs({
-  align: 'center',
-  grow: true,
-  justify: 'center',
-})`
-  background-color: ${p => p.color};
+const Col = styled(({ color, ...props }) => (
+  <Box
+    align="center"
+    grow
+    justify="center"
+    style={{
+      backgroundColor: color,
+    }}
+    {...props}
+  />
+))`
   height: 100px;
 `
 
