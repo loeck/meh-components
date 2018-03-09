@@ -1,21 +1,21 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/env",
       {
+        "loose": true,
         "targets": {
           "browsers": ["last 2 versions", "ie >= 11"],
           "node": "current"
         }
       }
     ],
-    "react",
-    "stage-0"
+    "@babel/react",
+    "@babel/stage-0"
   ],
   "plugins": [
-    "lodash",
     "add-module-exports",
-    "transform-decorators-legacy",
+    "styled-components",
     [
       "module-resolver",
       {
